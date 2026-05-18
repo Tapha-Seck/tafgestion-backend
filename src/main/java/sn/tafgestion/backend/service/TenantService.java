@@ -60,6 +60,13 @@ public class TenantService {
                 .schemaName(schemaName)
                 .planId(request.getPlanId())
                 .status("ACTIVE")
+                // Nouveaux champs légaux
+                .ninea(request.getNinea())
+                .rc(request.getRc())
+                .description(request.getDescription())
+                .website(request.getWebsite())
+                .city(request.getCity())
+                .zipCode(request.getZipCode())
                 .build();
 
         tenant = tenantRepository.save(tenant);
@@ -106,7 +113,6 @@ public class TenantService {
                 Map<Object, Object> sources = new HashMap<>(
                         tenantDataSource.getResolvedDataSources()
                 );
-                // Clé = UUID du tenant (correspond au tenantId dans le JWT)
                 sources.put(tenant.getId().toString(), ds);
                 tenantDataSource.setTargetDataSources(sources);
             } catch (Exception e) {

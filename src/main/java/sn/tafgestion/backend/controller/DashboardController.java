@@ -14,9 +14,13 @@ public class DashboardController {
 
     private final DashboardService dashboardService;
 
-    // GET /api/dashboard/stats
+    // GET /api/dashboard/stats?period=DAY
+    // GET /api/dashboard/stats?period=WEEK
+    // GET /api/dashboard/stats?period=MONTH
+    // GET /api/dashboard/stats?period=YEAR
     @GetMapping("/stats")
-    public ResponseEntity<DashboardResponse> getStats() {
-        return ResponseEntity.ok(dashboardService.getStats());
+    public ResponseEntity<DashboardResponse> getStats(
+            @RequestParam(defaultValue = "MONTH") String period) {
+        return ResponseEntity.ok(dashboardService.getStats(period));
     }
 }

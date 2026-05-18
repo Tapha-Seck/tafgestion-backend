@@ -21,6 +21,12 @@ public class CreateTenantRequest {
     private Double tvaRate;
     private String invoicePrefix;
     private Long planId;
+    private String ninea;
+    private String rc;
+    private String description;
+    private String website;
+    private String city;
+    private String zipCode;
 
     // Compte admin initial
     private String adminEmail;

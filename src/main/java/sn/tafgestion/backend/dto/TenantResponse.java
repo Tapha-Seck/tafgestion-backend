@@ -26,6 +26,12 @@ public class TenantResponse {
     private String logoUrl;
     private String schemaName;
     private String status;
+    private String ninea;
+    private String rc;
+    private String description;
+    private String website;
+    private String city;
+    private String zipCode;
 
     public static TenantResponse fromTenant(Tenant tenant) {
         return TenantResponse.builder()
@@ -39,6 +45,12 @@ public class TenantResponse {
                 .invoicePrefix(tenant.getInvoicePrefix())
                 .primaryColor(tenant.getPrimaryColor())
                 .logoUrl(tenant.getLogoUrl())
+                .ninea(tenant.getNinea())
+                .rc(tenant.getRc())
+                .description(tenant.getDescription())
+                .website(tenant.getWebsite())
+                .city(tenant.getCity())
+                .zipCode(tenant.getZipCode())
                 .schemaName(tenant.getSchemaName())
                 .status(tenant.getStatus())
                 .build();

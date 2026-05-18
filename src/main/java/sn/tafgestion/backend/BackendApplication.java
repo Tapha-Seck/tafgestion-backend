@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import sn.tafgestion.backend.service.TenantService;
 
 @SpringBootApplication
@@ -11,6 +12,7 @@ import sn.tafgestion.backend.service.TenantService;
 public class BackendApplication implements CommandLineRunner {
 
     private final TenantService tenantService;
+    private final PasswordEncoder passwordEncoder;
 
     public static void main(String[] args) {
         SpringApplication.run(BackendApplication.class, args);
@@ -18,7 +20,6 @@ public class BackendApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // Charger tous les tenants existants au démarrage
         tenantService.loadAllTenants();
         System.out.println("✅ Tous les tenants chargés !");
     }

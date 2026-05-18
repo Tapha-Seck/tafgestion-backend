@@ -44,6 +44,24 @@ public class Tenant {
     @Column(name = "logo_url")
     private String logoUrl;
 
+    @Column(name = "ninea")
+    private String ninea;
+
+    @Column(name = "rc")
+    private String rc;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "website")
+    private String website;
+
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "zip_code")
+    private String zipCode;
+
     @Column(name = "primary_color")
     private String primaryColor = "#1565C0";
 
